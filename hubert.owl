@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/"
+     xml:base="http://www.example.org/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.org/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/fears -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/fears"/>
+    
+
+
+    <!-- http://www.example.org/isFearedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/isFearedIn">
+        <owl:inverseOf rdf:resource="http://www.example.org/isFearedIn"/>
+        <rdfs:domain rdf:resource="http://www.example.org/King"/>
+        <rdfs:range rdf:resource="http://www.example.org/Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/kingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/kingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.example.org/livesIn"/>
+        <rdfs:domain rdf:resource="http://www.example.org/King"/>
+        <rdfs:range rdf:resource="http://www.example.org/Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/livesIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/livesIn">
+        <rdfs:domain rdf:resource="http://www.example.org/Human"/>
+        <rdfs:range rdf:resource="http://www.example.org/Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/madeIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/madeIn">
+        <rdfs:domain rdf:resource="http://www.example.org/Vehicle"/>
+        <rdfs:range rdf:resource="http://www.example.org/Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/owner -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/owner">
+        <owl:inverseOf rdf:resource="http://www.example.org/owns"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/owns">
+        <rdfs:domain rdf:resource="http://www.example.org/Human"/>
+        <rdfs:range rdf:resource="http://www.example.org/Vehicle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/Car -->
+
+    <owl:Class rdf:about="http://www.example.org/Car">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/Human -->
+
+    <owl:Class rdf:about="http://www.example.org/Human"/>
+    
+
+
+    <!-- http://www.example.org/King -->
+
+    <owl:Class rdf:about="http://www.example.org/King">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/Human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/Place -->
+
+    <owl:Class rdf:about="http://www.example.org/Place"/>
+    
+
+
+    <!-- http://www.example.org/Vehicle -->
+
+    <owl:Class rdf:about="http://www.example.org/Vehicle"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/Britain -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/Britain">
+        <rdf:type rdf:resource="http://www.example.org/Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/Buchs -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/Buchs">
+        <rdf:type rdf:resource="http://www.example.org/Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/Clouseau -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/Clouseau">
+        <rdf:type rdf:resource="http://www.example.org/Human"/>
+        <livesIn rdf:resource="http://www.example.org/France"/>
+        <owns rdf:resource="http://www.example.org/Renault"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/Ferrari_F430 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/Ferrari_F430">
+        <rdf:type rdf:resource="http://www.example.org/Car"/>
+        <madeIn rdf:resource="http://www.example.org/Italy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/France -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/France">
+        <rdf:type rdf:resource="http://www.example.org/Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/Italy -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/Italy">
+        <rdf:type rdf:resource="http://www.example.org/Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/JohnnyEnglish -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/JohnnyEnglish">
+        <rdf:type rdf:resource="http://www.example.org/Human"/>
+        <livesIn rdf:resource="http://www.example.org/Britain"/>
+        <owns rdf:resource="http://www.example.org/MiniCooper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/MiniCooper -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/MiniCooper">
+        <rdf:type rdf:resource="http://www.example.org/Car"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/Renault -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/Renault">
+        <rdf:type rdf:resource="http://www.example.org/Car"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/#Hubert -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/#Hubert">
+        <rdf:type rdf:resource="http://www.example.org/King"/>
+        <isFearedIn rdf:resource="http://www.example.org/Britain"/>
+        <isFearedIn rdf:resource="http://www.example.org/France"/>
+        <kingOf rdf:resource="http://www.example.org/Buchs"/>
+        <owns rdf:resource="http://www.example.org/Ferrari_F430"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
